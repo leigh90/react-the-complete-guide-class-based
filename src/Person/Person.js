@@ -8,6 +8,8 @@ const person = (props) => {
     return <div>
                 <p onClick={props.click}> Person component: I am {props.name} and I am {props.age}</p>
                 <p>{props.children}</p>
+                <input type="text" onChange={props.changed} value={props.name}/>
+
                 {/* children is a special property that takes any nested children within the component, this includes tags and plain text(as seen in this case) and renders them  */}
             </div> 
 

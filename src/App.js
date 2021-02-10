@@ -32,6 +32,18 @@ class App extends Component {
       ]
     })
   }
+
+  nameChangedHandler = (event) => {
+    this.setState({
+      persons: [
+        { name: 'Max',age:28},
+        { name: event.target.value ,age:280},
+        { name: 'James',age:26},
+
+
+      ]
+    })
+  } 
   // this class has a one method the 'render' method which react will call to render something to the screen. every component has to render or return some html which can be rendered to the dom. you can listen do other things  e.g listen for events, do math etc
   render() {
     return (
@@ -48,7 +60,7 @@ class App extends Component {
         {/* the this here refers to the 'App' class */}
         {/* the syntax is this, then the property name in this case state and the the property in this case person array[index].value */}
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
-        <Person  name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(this,'Max!')}>My Hobbies: Racing </Person>
+        <Person  name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.switchNameHandler.bind(this,'Max!')} changed={this.nameChangedHandler}>My Hobbies: Racing </Person>
         {/* the click property here is used to pass down the switchname handler class method to the child component which otherwise wouldnt have access to it */}
         <Person  name={this.state.persons[2].name} age={this.state.persons[2].age}/>
 
