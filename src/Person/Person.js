@@ -1,11 +1,12 @@
 // import React
 import React from 'react';
 import { render } from 'react-dom';
+import './person.css';
 
 // in its simplest form a component is a function returning some jsx
 const person = (props) => {
     // if you want to pass in properties into the elements you add the argument 'props' which for best practise should be named props but can always be named differently
-    return <div>
+    return <div className='Person'>
                 <p onClick={props.click}> Person component: I am {props.name} and I am {props.age}</p>
                 <p>{props.children}</p>
                 <input type="text" onChange={props.changed} value={props.name}/>
